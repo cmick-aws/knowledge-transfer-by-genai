@@ -65,12 +65,15 @@ export class ChatService {
           .then((retrieveResponse) => {
             const relatedDocuments = retrieveResponse.retrievalResults;
             console.log(`Related documents: ${relatedDocuments.length}`);
-            console.log(
-              `Preview of the first document: ${relatedDocuments[0].content.text}`
-            );
-            console.log(
-              `Full content of the first document: ${JSON.stringify(relatedDocuments[0])}`
-            );
+
+            if (relatedDocuments.length > 0) {
+              console.log(
+                `Preview of the first document: ${relatedDocuments[0].content.text}`
+              );
+              console.log(
+                `Full content of the first document: ${JSON.stringify(relatedDocuments[0])}`
+              );
+            }
 
             const command = new ConverseStreamCommand({
               modelId: postMessageRequest.message.model,
