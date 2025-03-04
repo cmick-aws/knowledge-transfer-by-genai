@@ -8,23 +8,23 @@ const availableModels: {
   supportMediaType: string[];
 }[] = [
   {
-    modelId: "anthropic.claude-3-haiku-20240307-v1:0",
-    label: "Claude 3 (Haiku)",
-    supportMediaType: ["image/jpeg", "image/png", "image/gif", "image/webp"],
-  },
-  {
     modelId: "anthropic.claude-3-sonnet-20240229-v1:0",
     label: "Claude 3 (Sonnet)",
     supportMediaType: ["image/jpeg", "image/png", "image/gif", "image/webp"],
   },
   {
-    modelId: "anthropic.claude-3-5-sonnet-20240620-v1:0",
+    modelId: "anthropic.claude-3-5-haiku-20241022-v1:0",
+    label: "Claude 3.5 (Haiku)",
+    supportMediaType: ["image/jpeg", "image/png", "image/gif", "image/webp"],
+  },
+  {
+    modelId: "anthropic.claude-3-5-sonnet-20241022-v2:0",
     label: "Claude 3.5 (Sonnet)",
     supportMediaType: ["image/jpeg", "image/png", "image/gif", "image/webp"],
   },
   {
-    modelId: "anthropic.claude-3-opus-20240229-v1:0",
-    label: "Claude 3 (Opus)",
+    modelId: "anthropic.claude-3-7-sonnet-20250219-v1:0",
+    label: "Claude 3.7 (Sonnet)",
     supportMediaType: ["image/jpeg", "image/png", "image/gif", "image/webp"],
   },
 ];
@@ -33,7 +33,7 @@ const useModelState = create<{
   modelId: Model;
   setModelId: (m: Model) => void;
 }>((set) => ({
-  modelId: "anthropic.claude-3-haiku-20240307-v1:0",
+  modelId: "anthropic.claude-3-5-haiku-20241022-v1:0",
   setModelId: (m) => {
     set({
       modelId: m,
