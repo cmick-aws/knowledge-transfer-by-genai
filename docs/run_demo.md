@@ -89,23 +89,6 @@ KBKnowledgeTrKnowledgeXXXXX`)。
 
 モデルアクセスを有効化しているかご確認ください。詳しくは[デプロイ手順](./deploy.md#生成AIモデルの有効化)を参照してください。
 
-### 画面を更新するとAccessDeniedエラーが表示される
-
-URLにはルートのみ指定可能です。ルートにアクセスください。
-
-- OK: `https://xxxxx.cloudfront.net`
-- NG: `https://xxxxx.cloudfront.net/alert/xxx-yyy-zzz`
-
-```xml
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
-<Error>
-<Code>AccessDenied</Code>
-<Message>Access Denied</Message>
-<RequestId>XXXXX</RequestId>
-<HostId>...</HostId>
-</Error>
-```
-
 ### 参考リンクを開くとInvalidArgumentエラーが表示される
 
 下記のエラーが表示される場合、KnowledgeBaseに取り込んだファイル名がUTF-8エンコードされていることを確認してください。

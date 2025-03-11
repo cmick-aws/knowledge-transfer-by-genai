@@ -88,23 +88,6 @@ Open any alert details screen and ask questions related to the call content, and
 
 Please check if you have enabled model access. For details, refer to [Deployment Instructions](./deploy_en.md#enabling-generative-ai-models).
 
-### AccessDenied error appears when refreshing the screen
-
-Only the root URL is accessible. Please access the root URL.
-
-- OK: `https://xxxxx.cloudfront.net`
-- NG: `https://xxxxx.cloudfront.net/alert/xxx-yyy-zzz`
-
-```xml
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
-<e>
-<Code>AccessDenied</Code>
-<Message>Access Denied</Message>
-<RequestId>XXXXX</RequestId>
-<HostId>...</HostId>
-</e>
-```
-
 ### InvalidArgument error when opening reference links
 
 If you see the error below, please check that the file names imported into the KnowledgeBase are UTF-8 encoded.

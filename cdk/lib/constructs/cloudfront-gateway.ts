@@ -100,6 +100,21 @@ export class CloudFrontGateway extends Construct {
         logBucket: props.accessLogBucket,
         logFilePrefix: "CloudFrontGateway/",
       }),
+      // Add custom error response for SPA routing
+      errorResponses: [
+        {
+          httpStatus: 403,
+          responseHttpStatus: 200,
+          responsePagePath: '/index.html',
+          ttl: Duration.minutes(0)
+        },
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: '/index.html',
+          ttl: Duration.minutes(0)
+        }
+      ],
     });
     this.distribution = distribution;
     this.oac = originAccessIdentity;
