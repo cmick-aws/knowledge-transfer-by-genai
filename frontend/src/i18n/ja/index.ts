@@ -11,6 +11,12 @@ const translation = {
       resolve: "アラートを解決する",
       submit: "送信",
     },
+    alertManagement: {
+      createDummyAlert: "ダミーアラートを作成",
+      createJapaneseAlert: "日本語アラートを作成",
+      createEnglishAlert: "英語アラートを作成",
+      clearAllAlerts: "すべてのアラートを削除"
+    },
     alertDashboard: {
       status: {
         open: "発生中のアラート",

@@ -4,12 +4,20 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { AiOutlineAlert } from "react-icons/ai";
 import useAlert from "@/features/alert/hooks/useAlert";
+import { useTranslation } from "react-i18next";
 
 function AlertManagementButton() {
   const { createDummyAlert, clearAlerts } = useAlert();
+  const { t, i18n } = useTranslation();
+
+  const createDummyAlertWithCurrentLanguage = () => {
+    // 現在のi18n言語設定を使用してダミーアラートを作成
+    createDummyAlert(i18n.language);
+  };
 
   return (
     <DropdownMenu>
@@ -24,11 +32,12 @@ function AlertManagementButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={createDummyAlert}>
-          ダミーアラートを作成する
+        <DropdownMenuItem onClick={createDummyAlertWithCurrentLanguage}>
+          {t("alertManagement.createDummyAlert")}
         </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <DropdownMenuItem onClick={clearAlerts}>
-          すべてのアラートを削除する
+          {t("alertManagement.clearAllAlerts")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

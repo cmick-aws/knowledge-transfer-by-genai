@@ -11,6 +11,12 @@ const translation = {
       resolve: "Resolve Alert",
       submit: "Submit",
     },
+    alertManagement: {
+      createDummyAlert: "Create Dummy Alert",
+      createJapaneseAlert: "Create Japanese Alert",
+      createEnglishAlert: "Create English Alert",
+      clearAllAlerts: "Clear All Alerts"
+    },
     alertDashboard: {
       status: {
         open: "Unhandled Alerts",

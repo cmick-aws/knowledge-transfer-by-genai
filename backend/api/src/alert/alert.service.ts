@@ -42,11 +42,24 @@ export class AlertService {
     return alert;
   }
 
-  async createDummyAlert(): Promise<Alert> {
+  async createDummyAlert(language = "ja"): Promise<Alert> {
+    const alertContent = {
+      ja: {
+        name: "ダミーアラート",
+        description: "このアラートはダミーです。",
+      },
+      en: {
+        name: "Dummy Alert",
+        description: "This is a dummy alert.",
+      },
+    };
+
+    const content = alertContent[language] || alertContent.ja;
+
     const alert: Alert = {
       id: uuidv4(),
-      name: "ダミーアラート",
-      description: "このアラートはダミーです。",
+      name: content.name,
+      description: content.description,
       openedAt: new Date().toISOString(),
       closedAt: "",
       status: "OPEN",
