@@ -84,8 +84,8 @@ function ContactCard(props: Props) {
   return (
     <>
       <Card className="my-4 px-12 py-6">
-        <label className="font-semibold">コンタクト先</label>
-        <p className="text-sm text-muted-foreground">ビデオ通話を開始します</p>
+        <label className="font-semibold">{t("alertDetail.contactCard.title")}</label>
+        <p className="text-sm text-muted-foreground">{t("alertDetail.contactCard.description")}</p>
         <div className="mt-6 flex flex-col space-y-2 md:block md:space-x-4 md:space-y-0">
           <Popover open={openMenu} onOpenChange={setOpenMenu}>
             <PopoverTrigger asChild>
@@ -127,11 +127,12 @@ function ContactCard(props: Props) {
             onClick={onClickCall}
             disabled={isOpenChime || callees.length === 0}
           >
-            通話する
+            {t("button.call")}
           </Button>
         </div>
       </Card>
     </>
   );
 }
+
 export default ContactCard;
