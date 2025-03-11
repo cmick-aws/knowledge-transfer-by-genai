@@ -26,8 +26,8 @@ const useAlert = () => {
         mutateAlerts();
       });
     },
-    createDummyAlert: () => {
-      return api.createDummyAlert().then((response) => {
+    createDummyAlert: (language?: string) => {
+      return api.createDummyAlert(language).then((response) => {
         mutateAlerts(
           produce(alerts, (draft) => {
             draft?.unshift(response.data);

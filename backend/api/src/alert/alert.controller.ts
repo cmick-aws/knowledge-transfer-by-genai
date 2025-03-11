@@ -31,8 +31,8 @@ export class AlertController {
   }
 
   @Post("/dummy")
-  async createDummyAlert(): Promise<Alert> {
-    return await this.alertService.createDummyAlert();
+  async createDummyAlert(@Body("language") language?: string): Promise<Alert> {
+    return await this.alertService.createDummyAlert(language);
   }
 
   @Delete("/:alertId")

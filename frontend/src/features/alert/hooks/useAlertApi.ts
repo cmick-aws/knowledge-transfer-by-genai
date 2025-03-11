@@ -27,8 +27,8 @@ const useAlertApi = () => {
       return http.patch(`/alert/${alertId}/status`, { status });
     },
 
-    createDummyAlert: () => {
-      return http.post<Alert>("/alert/dummy", {});
+    createDummyAlert: (language?: string) => {
+      return http.post<Alert>("/alert/dummy", { language });
     },
 
     closeWithComment: (alertId: string, comment: string) => {
