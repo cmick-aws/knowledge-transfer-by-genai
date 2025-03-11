@@ -2,10 +2,12 @@ import { Alert } from "@/types/alert";
 import { Card } from "@/components/ui/card";
 import { getSeverityColor, getStatusColor } from "@/features/alert/utils/color";
 import { LuCheck, LuFlame } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
 
 function AlertDetailCard({ item }: { item: Alert }) {
   const severityColor = getSeverityColor(item.severity);
   const statusColor = getStatusColor(item.status);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -40,32 +42,32 @@ function AlertDetailCard({ item }: { item: Alert }) {
         <div className="space-y-2 py-2">
           <div>
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              アラートID:
+              {t("alertDetail.card.alertId")}:
             </label>
             <div>{item.id}</div>
           </div>
           <div>
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              発生日時：
+              {t("alertDetail.card.openedAt")}:
             </label>
             <div>{new Date(item.openedAt).toLocaleString()}</div>
           </div>
           <div>
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              名前：
+              {t("alertDetail.card.name")}:
             </label>
             <div>{item.name}</div>
           </div>
           <div>
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              詳細：
+              {t("alertDetail.card.description")}:
             </label>
             <div>{item.description}</div>
           </div>
           <hr />
           <div className="pt-2">
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              クローズした日時：
+              {t("alertDetail.card.closedAt")}:
             </label>
             <div>
               <div>
@@ -75,7 +77,7 @@ function AlertDetailCard({ item }: { item: Alert }) {
           </div>
           <div>
             <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              コメント：
+              {t("alertDetail.card.comment")}:
             </label>
             <div>{item.comment}</div>
           </div>

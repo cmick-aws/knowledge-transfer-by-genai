@@ -40,6 +40,14 @@ const translation = {
         referenceLink: "参考リンク",
         referenceVideo: "参考通話記録",
       },
+      card: {
+        alertId: "アラートID",
+        openedAt: "発生日時",
+        name: "名前",
+        description: "詳細",
+        closedAt: "クローズした日時",
+        comment: "コメント"
+      }
     },
     meetingVideo: {
       title: "通話記録",

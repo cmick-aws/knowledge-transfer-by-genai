@@ -40,6 +40,14 @@ const translation = {
         referenceLink: "Reference Link",
         referenceVideo: "Reference Call Recording",
       },
+      card: {
+        alertId: "Alert ID",
+        openedAt: "Opened Date",
+        name: "Name",
+        description: "Description",
+        closedAt: "Closed Date",
+        comment: "Comment"
+      }
     },
     meetingVideo: {
       title: "Call Recording",
