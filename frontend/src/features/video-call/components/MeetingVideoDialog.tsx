@@ -67,7 +67,7 @@ function MeetingVideoDialog({ meeting, alertId, inverted = false }: Props) {
               </DialogTrigger>
             </TooltipTrigger>
             <TooltipContent>
-              通話日時: {new Date(meeting.createdAt).toLocaleString()}
+              {t("meetingVideo.callDateTime")}: {new Date(meeting.createdAt).toLocaleString()}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -80,14 +80,14 @@ function MeetingVideoDialog({ meeting, alertId, inverted = false }: Props) {
         >
           <DialogHeader className="h-8">{t("meetingVideo.title")}</DialogHeader>
           <div className="mb-4">
-            <p>作成日時: {new Date(meeting.createdAt).toLocaleString()}</p>
+            <p>{t("meetingVideo.createdAt")}: {new Date(meeting.createdAt).toLocaleString()}</p>
             <p>
-              ステータス:{" "}
+              {t("meetingVideo.status")}:{" "}
               {meeting.status === "Saving"
-                ? "保存中"
+                ? t("meetingVideo.statusSaving")
                 : meeting.status === "Summarizing"
-                  ? "要約中"
-                  : "完了"}
+                  ? t("meetingVideo.statusSummarizing")
+                  : t("meetingVideo.statusCompleted")}
             </p>
           </div>
           {meetingVideoUrl ? (
@@ -117,7 +117,7 @@ function MeetingVideoDialog({ meeting, alertId, inverted = false }: Props) {
                       : "text-background"
                   )}
                 ></FaDownload>
-                通話記録の要約
+                {t("meetingVideo.downloadTranscript")}
               </div>
             </div>
           )}
