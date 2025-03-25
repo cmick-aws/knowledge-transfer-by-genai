@@ -15,6 +15,7 @@ import { ChunkingStrategy } from "@cdklabs/generative-ai-cdk-constructs/lib/cdk-
 export type BedrockModelId =
   | "anthropic.claude-3-sonnet-20240229-v1:0"
   | "anthropic.claude-3-5-haiku-20241022-v1:0"
+  | "anthropic.claude-3-5-sonnet-20240620-v1:0"
   | "anthropic.claude-3-5-sonnet-20241022-v2:0"
   | "anthropic.claude-3-7-sonnet-20250219-v1:0";
 
@@ -74,7 +75,8 @@ export class KnowledgeTransferStack extends cdk.Stack {
         knowledge,
         bedrockRegion,
         // Model to summarize video
-        bedrockModelId: "anthropic.claude-3-5-haiku-20241022-v1:0",
+        // bedrockModelId: "anthropic.claude-3-5-haiku-20241022-v1:0",
+        bedrockModelId: "anthropic.claude-3-5-sonnet-20240620-v1:0",
       }
     );
 

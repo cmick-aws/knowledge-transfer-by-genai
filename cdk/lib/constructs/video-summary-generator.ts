@@ -106,7 +106,8 @@ export class VideoSummaryGenerator extends Construct {
             "States.Format('{}/{}.json', $$.Execution.Input.detail.meetingId, $.Source.Payload.SourceFileName)"
           ),
           // LanguageCode: "en-US",
-          LanguageCode: "ja-JP",
+          // LanguageCode: "ja-JP",
+          IdentifyLanguage: true,
           Settings: {
             ShowSpeakerLabels: true,
             MaxSpeakerLabels: 10,
