@@ -15,18 +15,19 @@ const s3Client = new S3Client({});
 const bedrockClient = new BedrockRuntimeClient({ region: BEDROCK_REGION });
 
 const SUMMARY_INSTRUCTIONS = `
-あなたのタスクは議事録を取ることです。これから会議の音声ファイルの生のトランスクリプトが与えられます。
-このトランスクリプトは、不完全な機械学習モデルによって音声からテキストへ変換されたものであり、正しく文法的に正確な文章であるとは限りません。
-また人の会話を録音している都合上、フィラー言葉や会話の流れを考慮した表現が含まれていることがあります。
-そのため、与えられたトランスクリプトをまず議事録として読みやすく整理し、その後に要約を作成してください。
+Your task is to take minutes. You will be given a raw transcript of the meeting audio file.
+This transcript was converted from speech to text by an imperfect machine learning model, so it may not be grammatically correct.
+Also, since it is a recording of human conversation, it may contain filler words and expressions that are needed for the flow of the conversation.
+Therefore, you will first organize the given transcript into a readable minutes, and then create a summary.
 <guideline>
-- 与えられたトランスクリプトを議事録として全文章を整理する
-- 主要な論点をピックアップする
-- 決定事項およびアクションアイテムをリストアップする
-- 上記を踏まえた上で、要約を作成する
-- 要約を補強する背景や詳細を提供する
+- Organize the entire text of a given transcript as a meeting minute
+- Identify the main points
+- List decisions and action items
+- Create a summary based on the above
+- Provide background and details to support the summary
+- Write the minutes in the same language as the transcript
 </guideline>
-上記のガイドラインを遵守し、トランスクリプトをもとに議事録を作成してください。
+Adhere to the guidelines above, and after determining the language of the transcript below, create minutes based on the transcript.
 <transcript>TRANSCRIPT</transcript>
 `;
 
